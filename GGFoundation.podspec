@@ -17,26 +17,16 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/waley518@gmail.com/GGFoundation'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/iOSRay/GGFoundation'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'waley518@gmail.com' => 'waley518@gmail.com' }
-  s.source           = { :git => 'https://github.com/waley518@gmail.com/GGFoundation.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '10.0'
+  s.author           = { 'waley' => 'waley518@gmail.com' }
+  s.source           = { :git => 'https://github.com/iOSRay/GGFoundation.git', :tag => s.version.to_s }
 
   s.source_files = 'GGFoundation/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'GGFoundation' => ['GGFoundation/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.ios.deployment_target  = '10.0'
+  s.platform               = :ios, '10.0'
+  s.requires_arc           = true
+  s.prefix_header_contents = '#import "YYKitMacro.h"', '#import "YYKit.h"'
+  s.dependency 'YYKit'
 end
